@@ -1,0 +1,15 @@
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ConcesionariaJPA.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\logic\Car.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\logic\LogicController.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\persistence\CarJpaController.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\persistence\exceptions\IllegalOrphanException.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\persistence\exceptions\NonexistentEntityException.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\persistence\exceptions\PreexistingEntityException.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\persistence\PersistenceController.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\Consult_Edit_Delete.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\Edit.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\Main.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\NoPatent.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\PatentError.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\Registration.java
+C:\Repositorios\Projects\Concesionaria-JPA\src\main\java\com\github\lsantana32\concesionaria\jpa\ui\SuccessfulRegistration.java
