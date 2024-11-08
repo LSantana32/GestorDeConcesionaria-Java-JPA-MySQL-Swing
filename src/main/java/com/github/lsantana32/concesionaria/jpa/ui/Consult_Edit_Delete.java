@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class Consult_Edit_Delete extends javax.swing.JFrame {
 
     LogicController lc = new LogicController();
+    Window window = new Window();
     
     public Consult_Edit_Delete() {
         initComponents();
@@ -31,6 +32,7 @@ public class Consult_Edit_Delete extends javax.swing.JFrame {
         btmDelete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         carsTable = new javax.swing.JTable();
+        btmBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -100,22 +102,37 @@ public class Consult_Edit_Delete extends javax.swing.JFrame {
                 .addGap(121, 121, 121))
         );
 
+        btmBack.setText("<");
+        btmBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btmBackActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 36, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btmBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(160, 160, 160)))
                 .addGap(42, 42, 42))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(btmBack))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -144,10 +161,15 @@ public class Consult_Edit_Delete extends javax.swing.JFrame {
             if (carsTable.getSelectedRow()!=-1){
                 int id = Integer.parseInt(String.valueOf(carsTable.getValueAt(carsTable.getSelectedRow(), 0)));
                 lc.deleteCar(id); 
-                viewMessage("Successful car deletion","Info","Delete Successful");
+                window.viewMessage("Successful car deletion","Info","Delete Successful");
                 loadTable();
-                }
+            }else {
+                window.viewMessage("Please select a record", "Error", "Selection Error");
             }
+        } 
+        else{
+            window.viewMessage("There are no records to modify", "Error", "No records Error");
+        }
     }//GEN-LAST:event_btmDeleteActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -159,13 +181,21 @@ public class Consult_Edit_Delete extends javax.swing.JFrame {
                 edit.setVisible(true);
                 edit.setLocationRelativeTo(null);
             }
+            else{
+                
+            }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btmBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBackActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btmBackActionPerformed
 
     
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btmBack;
     private javax.swing.JButton btmDelete;
     private javax.swing.JTable carsTable;
     private javax.swing.JButton jButton2;
@@ -199,21 +229,6 @@ public class Consult_Edit_Delete extends javax.swing.JFrame {
         }
         carsTable.setModel(table);
     }
-    
-    
-    public void viewMessage (String message, String type, String title){
-	JOptionPane op = new JOptionPane(message);
-	if (type.equals("Info")){
-		op.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-	}
-	else if(type.equals("Error")){
-		op.setMessageType(JOptionPane.ERROR_MESSAGE);
-	}
-	JDialog dialog = op.createDialog(title);
-	dialog.setVisible(true); 
-	dialog.setAlwaysOnTop(true);
-}
-
 
 }
 

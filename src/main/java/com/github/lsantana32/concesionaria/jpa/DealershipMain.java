@@ -10,7 +10,7 @@ import com.github.lsantana32.concesionaria.jpa.ui.Main;
  *
  * @author lucas
  */
-public class ConcesionariaJPA {
+public class DealershipMain {
 
     public static void main(String[] args) {
         Main main = new Main();
